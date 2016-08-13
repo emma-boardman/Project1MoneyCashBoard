@@ -6,7 +6,7 @@ class Merchant
 attr_reader :id, :name
 
 def initialize( options )
-  @id = options['id'].to_i,
+  @id = options['id'].to_i
   @name = options['name']
 end
 
@@ -23,13 +23,15 @@ end
 
 def self.all()
   sql = "SELECT * FROM merchants"
-  return Merchant.map_items( sql )
+  merchants = SqlRunner.run( sql )
+  result = merchants.map { |m| Merchant.new( m ) }
+  return result
 end
 
-  def self.map_items(sql)
-    merchant = SqlRunner.run(sql)
-    result = merchant.map { |product| Merchant.new( product ) }
-    return result
-  end
+  # def self.map_items(sql)
+  #   merchant = SqlRunner.run(sql)
+  #   result = merchant.map { |product| Merchant.new( product ) }
+  #   return result
+  # end
 
 end
