@@ -40,7 +40,7 @@ class TestAnalysis < Minitest::Test
 
     @transaction1 = Transaction.new({'amount' => '30', 'merchant_id' => @merchant1.id, 'tag_id' => @tag1.id, 'id' => 1 })
     # @transaction1.id = 1
-    @transaction2 = Transaction.new({'amount' => '12', 'merchant_id' => @merchant2.id, 'tag_id' => @tag4.id, 'id' => 2 })
+    @transaction2 = Transaction.new({'amount' => '12', 'merchant_id' => @merchant2.id, 'tag_id' => @tag5.id, 'id' => 2 })
     # @transaction2.id = 2
     @transaction3 = Transaction.new({'amount' => '50', 'merchant_id' => @merchant7.id, 'tag_id' => @tag5.id, 'id' => 3 })
     # @transaction3.id = 3
@@ -54,8 +54,10 @@ class TestAnalysis < Minitest::Test
 
 def test_total_expenditure()
   assert_equal(92, @analysis.total_expenditure)
-
 end 
 
+def test_total_expenditure_by_tag()
+  assert_equal(62, @analysis.total_expenditure_by_tag)
+end
 
 end
