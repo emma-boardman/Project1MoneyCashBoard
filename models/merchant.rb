@@ -11,9 +11,9 @@ def initialize( options )
 end
 
 def save()
-  sql = "INSERT INTO merchants (name) VALUES (#{@name}"
+  sql = "INSERT INTO merchants (name) VALUES ('#{@name}') RETURNING *"
   merchant = SqlRunner.run( sql ).first
-  @id = merchant('id')
+  @id = merchant['id']
 end 
 
 def self.delete_all()

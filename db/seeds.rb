@@ -3,7 +3,6 @@ require_relative('../models/merchant')
 require_relative('../models/tag')
 require_relative('../models/transaction')
 
-
 Merchant.delete_all()
 Tag.delete_all()
 Transaction.delete_all()
@@ -11,7 +10,7 @@ Transaction.delete_all()
 merchant1 = Merchant.new({'name' => 'Tesco'})
 merchant2 = Merchant.new({'name' => 'ITunes'})
 merchant3 = Merchant.new({'name' => 'Ikea'})
-merchant4 = Merchant.new({'name' => 'Caffeine Drop'})
+merchant4 = Merchant.new({'name' => 'Caffeine Drip'})
 merchant5 = Merchant.new({'name' => 'Game'})
 merchant6 = Merchant.new({'name' => 'Waterstones'})
 merchant7 = Merchant.new({'name' => 'Amazon'})
@@ -37,9 +36,9 @@ tag3.save
 tag4.save
 tag5.save
 
-transaction1 = Transaction.new({'amount' => '30', 'merchant_id' => 'merchant1.id', 'tag_id' => 'tag1.id' })
-transaction2 = Transaction.new({'amount' => '12', 'merchant_id' => 'merchant2.id', 'tag_id' => 'tag4.id' })
-transaction3 = Transaction.new({'amount' => '50', 'merchant_id' => 'merchant7.id', 'tag_id' => 'tag5.id' })
+transaction1 = Transaction.new({'amount' => '30', 'merchant_id' => merchant1.id, 'tag_id' => tag1.id })
+transaction2 = Transaction.new({'amount' => '12', 'merchant_id' => merchant2.id, 'tag_id' => tag4.id })
+transaction3 = Transaction.new({'amount' => '50', 'merchant_id' => merchant7.id, 'tag_id' => tag5.id })
 
 transaction1.save
 transaction2.save
