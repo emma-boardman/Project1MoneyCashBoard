@@ -10,6 +10,12 @@ def initialize( options )
   @name = options['name']
 end
 
+def save()
+  sql = "INSERT INTO merchants (name) VALUES (#{@name}"
+  merchant = SqlRunner.run( sql ).first
+  @id = merchant('id')
+end 
+
 def self.delete_all()
   sql = "DELETE FROM merchants"
   SqlRunner.run( sql )

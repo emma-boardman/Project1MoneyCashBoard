@@ -10,6 +10,12 @@ def initialize( options )
   @tag = options['tag']
 end
 
+def save()
+  sql = "INSERT INTO tags (tag) VALUES (#{@tag}) RETURNING *"
+  tag = SqlRunner.run( sql ).first
+  @id = tag['id']
+end
+
 def self.delete_all()
   sql = "DELETE FROM tags"
   SqlRunner.run( sql )

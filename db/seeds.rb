@@ -4,6 +4,10 @@ require_relative('../models/tag')
 require_relative('../models/transaction')
 
 
+Merchant.delete_all()
+Tag.delete_all()
+Transaction.delete_all()
+
 merchant1 = Merchant.new({'name' => 'Tesco'})
 merchant2 = Merchant.new({'name' => 'ITunes'})
 merchant3 = Merchant.new({'name' => 'Ikea'})

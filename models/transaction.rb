@@ -12,7 +12,17 @@ attr_reader :id, :amount, :merchant_id, :tag_id
     @tag_id = options['tag_id'].to_i
   end
 
+def save()
+  sql = "INSERT INTO transactions (amount, merchant_id, tag_id) VALUES (#{@amount}, #{@merchant_id}, #{@tag_id}) RETURNING *"
+  transaction = SqlRunner.run( sql ).first
+  @id = transaction['id']
+end
+
+
 def self.delete_all()
   sql = "DELETE FROM transactions"
   SqlRunner.run( sql )
+end
+
+
 end
