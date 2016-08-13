@@ -9,4 +9,10 @@ class Analysis
     @transactions = transactions
   end
 
+  def total_expenditure
+    total = 0
+    @transactions.each {|transaction| total += transaction.amount}
+    return total
+  end
+
 end
