@@ -23,5 +23,16 @@ def self.delete_all()
   SqlRunner.run( sql )
 end
 
+def self.all()
+  sql = "SELECT * FROM transactions"
+  return Transaction.map_items( sql )
+end
+
+def map_items( sql )
+  transaction = SqlRunner.run(sql)
+  result = transaction.map {|product| Transaction.new( product )}
+  return result
+end
+
 
 end

@@ -21,6 +21,15 @@ def self.delete_all()
   SqlRunner.run( sql )
 end
 
+def self.all()
+  sql = "SELECT * FROM merchants"
+  return Merchant.map_items( sql )
+end
 
+  def self.map_items(sql)
+    merchant = SqlRunner.run(sql)
+    result = merchant.map { |product| Merchant.new( product ) }
+    return result
+  end
 
 end
