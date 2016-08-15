@@ -1,0 +1,14 @@
+<div>
+  <% @transactions.each do |transaction| %>
+    <p>Transaction ID: <%= transaction.id  %> </p>
+    <p>Merchant ID: <%= transaction.merchant_id %></p>
+    <p>Merchant Name: <%= transaction.merchant.name  %></p>
+    <p>Tag ID: <%= transaction.tag_id %></p>
+    <p>Amount: <%= transaction.amount %></p>
+
+    <hr>
+  <% end %>
+<!--   <a href="rentals/new">Rent a book</a> -->
+</div>
+
+

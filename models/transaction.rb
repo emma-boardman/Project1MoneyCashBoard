@@ -35,6 +35,12 @@ def self.map_items( sql )
   return result
 end
 
+def merchant()
+  sql = "SELECT * FROM merchants WHERE id = #{@merchant_id}"
+  return Merchant.map_item(sql)
+end
+
+
 end
 
 
