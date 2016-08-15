@@ -40,6 +40,15 @@ def merchant()
   return Merchant.map_item(sql)
 end
 
+def show_tag()
+  sql = "SELECT * FROM tags WHERE id = #{@tag_id}"
+  return Tag.map_item(sql)
+end
+
+def self.map_item(sql)
+  result = Tag.map_items(sql)
+  return result.first
+end
 
 end
 
