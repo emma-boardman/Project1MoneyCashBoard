@@ -10,32 +10,18 @@
 <% @merchants.each do |merchant| %>
 <option value="<%= merchant.id %>"> <%= merchant.name  %>
 </option>
-</form>
 </select>
 
 
-
-
-
-
-
-
-
-<!-- <form action="/rentals" method="post">
-   <label for="book_id">Book:</label>
- <select name="book_id">
-   <% @books.each do |book| %>
-   <option value="<%= book.id %>"> <%= book.title %> 
-   </option>
-   <% end %>
-   </select>
-
-   <label for="member_id">Member:</label>
-   <select name="member_id">
-   <% @members.each do |member| %>
-   <option value="<%= member.id %>"> <%= member.name %> </option>
-   <% end %>
+<label for="tag_id">Category:</label>
+<select name="tag_id">
+<% @tags.each do |tag|  %>
+<option value="<%= tag.id  %>"> <%= tag.tag  %>
+ </option>
+ <% end %>
  </select>
 
-<input type='submit' value="Add Rental">
-</form> --> -->
+<input type='submit' value="Add Transaction">
+</form>
+
+
