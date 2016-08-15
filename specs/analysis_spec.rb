@@ -44,12 +44,17 @@ class TestAnalysis < Minitest::Test
     # @transaction2.id = 2
     @transaction3 = Transaction.new({'amount' => '50', 'merchant_id' => @merchant7.id, 'tag_id' => @tag5.id, 'id' => 3 })
     # @transaction3.id = 3
+    @transaction4 = Transaction.new({'amount' => '23', 'merchant_id' => @merchant2.id, 'tag_id' => @tag4.id, 'id' => 4 })
+    @transaction5 = Transaction.new({'amount' => '9', 'merchant_id' => @merchant1.id, 'tag_id' => @tag5.id, 'id' => 5 })
+    @transaction6 = Transaction.new({'amount' => '10', 'merchant_id' => @merchant7.id, 'tag_id' => @tag1.id, 'id' => 6 })
 
-    merchants = [@merchant1, @merchant2, @merchant3, @merchant4, @merchant5, @merchant6, @merchant7]
-    tags = [@tag1, @tag2, @tag3, @tag4, @tag5]
-    transactions = [@transaction1, @transaction2, @transaction3]
 
-    @analysis = Analysis.new(merchants, tags, transactions)
+    # merchants = [@merchant1, @merchant2, @merchant3, @merchant4, @merchant5, @merchant6, @merchant7]
+    # tags = [@tag1, @tag2, @tag3, @tag4, @tag5]
+    # transactions = [@transaction1, @transaction2, @transaction3, @transaction4, @transaction5, @transaction6]
+
+    # @analysis = Analysis.new(merchants, tags, transactions)
+    
   end
 
 def test_total_expenditure()
@@ -59,5 +64,14 @@ end
 def test_total_expenditure_by_tag()
   assert_equal(62, @analysis.total_expenditure_by_tag)
 end
+
+def test_transactions_by_merchant
+    assert_equal({'amount' => '30'}, @transactions.transactions_by_merchant)
+end
+
+# def test_transactions_by_tag
+#     assert_equal({'amount' => '30'}, @transaction.transactions_by_tag)
+# end
+
 
 end

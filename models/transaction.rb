@@ -1,5 +1,6 @@
 require('pg')
 require_relative('../db/sql_runner')
+require( 'pry-byebug')
 
 class Transaction
 
@@ -34,5 +35,7 @@ def self.map_items( sql )
   return result
 end
 
-
 end
+
+
+
