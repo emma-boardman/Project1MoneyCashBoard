@@ -37,6 +37,11 @@ def self.map_item(sql)
   return result.first
 end
 
+def self.find(id)
+  sql = "SELECT * FROM tags WHERE id = #{id};"
+  return Tag.map_item(sql)
+end
+
 # def merchants()
 #   sql = "SELECT m.* FROM merchants m INNER JOIN transactions t ON m.id = t.merchant_id WHERE t.tag_id = 4"
 #   return Merchant.map_items( sql )

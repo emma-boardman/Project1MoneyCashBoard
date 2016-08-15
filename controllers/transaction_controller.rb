@@ -26,17 +26,21 @@ post '/transactions' do
 end
 
 #get a form so the user can enter what they want to search for
+
+
 get '/transactions/tags/new' do
   @transactions = Transaction.all
   @tags = Tag.all
-  @analysis = Analysis.new
-  erb (:'transactions/tags/new')
+  erb :'transactions/tags/new'
 end
 
-
-# post transactions/tag
-# with a find method
-# but don't save
-
+#display transactions by tags defined above
+post '/transactions/tags' do
+  # binding.pry
+  @transactions = Transaction.show_tag( params['tag_id'].to_i )
+  binding.pry
+  @analysis = Analysis.new
+  erb(:'transactions/tags/index')
+end
 
 
