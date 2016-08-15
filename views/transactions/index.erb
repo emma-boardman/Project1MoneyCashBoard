@@ -1,4 +1,10 @@
 <div>
+<h2>TOTAL EXPENDITURE:</h2>
+
+<p><%= @analysis.total_expenditure %></p>
+</div>
+
+<div>
   <% @transactions.each do |transaction| %>
     <p>Transaction ID: <%= transaction.id  %> </p>
 

@@ -3,10 +3,9 @@ class Analysis
 
   attr_accessor :merchants, :tags, :transactions
 
-  def initialize(merchants, tags, transactions)
-    @merchants = merchants
-    @tags = tags
-    @transactions = transactions
+  def initialize()
+    @merchants = Merchant.all
+    @transactions = Transaction.all
   end
 
   def total_expenditure
@@ -23,23 +22,25 @@ class Analysis
     return total
   end
 
-  def transactions_by_merchant()
-    #purpose of this function is to show all transactions by one certain merchant.
-    #need to select all transaction info from transaction table where the merchant id matches the id passed in
-    #want to be able to show the name of the merchant as well as the ID, so need an inner join
-    sql = "SELECT t.* FROM transactions t INNER JOIN merchants m ON t.merchant_id = m.id WHERE m.id = 2"
-    return Transaction.map_items( sql )
-    #how do I show the name of the merchant?
-  end
+  
 
-  def transactions_by_tag()
-    #purpose of this function is to show all transactions by one certain merchant.
-    #need to select all transaction info from transaction table where the merchant id matches the id passed in
-    #want to be able to show the name of the merchant as well as the ID, so need an inner join
-    sql = "SELECT t.* FROM transactions t INNER JOIN tags ON t.tag_id = tag.id WHERE tag.id = 1"
-    return Transaction.map_items( sql )
-    #how do I show the name of the merchant?
-  end
+  # def transactions_by_merchant()
+  #   #purpose of this function is to show all transactions by one certain merchant.
+  #   #need to select all transaction info from transaction table where the merchant id matches the id passed in
+  #   #want to be able to show the name of the merchant as well as the ID, so need an inner join
+  #   sql = "SELECT t.* FROM transactions t INNER JOIN merchants m ON t.merchant_id = m.id WHERE m.id = 2"
+  #   return Transaction.map_items( sql )
+  #   #how do I show the name of the merchant?
+  # end
+
+  # def transactions_by_tag()
+  #   #purpose of this function is to show all transactions by one certain merchant.
+  #   #need to select all transaction info from transaction table where the merchant id matches the id passed in
+  #   #want to be able to show the name of the merchant as well as the ID, so need an inner join
+  #   sql = "SELECT t.* FROM transactions t INNER JOIN tags ON t.tag_id = tag.id WHERE tag.id = 1"
+  #   return Transaction.map_items( sql )
+  #   #how do I show the name of the merchant?
+  # end
 
 
 end
