@@ -10,17 +10,17 @@ get '/transactions' do
 end
 
 #new
-get 'transactions/new' do
+get '/transactions/new' do
   @merchants = Merchant.all
   @tags = Tag.all
   erb (:'transactions/new')
 end
 
+#create
+post '/transactions' do
+  transaction = Transaction.new(params) 
+  transaction.save()
+  redirect( to('transactions') )
+end
 
 
-# #create
-# post '/rentals' do
-#   rental = Rental.new(params) #just creats a new object in memory 
-#   rental.save()
-#   redirect( to('rentals') )
-# end
