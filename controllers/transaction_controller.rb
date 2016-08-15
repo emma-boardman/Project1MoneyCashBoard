@@ -9,12 +9,14 @@ get '/transactions' do
   erb :'transactions/index'
 end
 
-# #new
-# get '/rentals/new' do
-#   @books = Book.all()
-#   @members = Member.all()
-#   erb (:'rentals/new')
-# end
+#new
+get 'transactions/new' do
+  @merchants = Merchant.all
+  @tags = Tag.all
+  erb (:'transactions/new')
+end
+
+
 
 # #create
 # post '/rentals' do
