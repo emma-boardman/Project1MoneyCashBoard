@@ -1,9 +1,7 @@
-<h2>Search for all transactions by category</h2>
 
+<div>
+<center>
 <form action="/transactions/tags" method="post">
-
-
-
 <label for="tag_id">Category:</label>
 <select name="tag_id">
 <% @tags.each do |tag|  %>
@@ -14,4 +12,9 @@
 
 <input type='submit' value="Search for this category">
 </form>
+<br>
+</center>
+</div>
+
+
 

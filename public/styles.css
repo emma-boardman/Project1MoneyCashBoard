@@ -150,8 +150,10 @@ header {
       border: #57433a 1.5px solid;
 
     }
-/*
-.table {
+
+.container {
+  display: flex;
+  flex-direction: column;
   background-color: #79655e;
   width: 60%;
   margin: 15px auto;
@@ -159,10 +161,11 @@ header {
   color: #d0bdb7;
   font-family: helvetica;
   font-size: 1em;
-}*/
+  text-align: center
+}
 
 
-/*
+
 .item {
   background-color: #d0bdb7;
   padding: 3px;
@@ -170,8 +173,8 @@ header {
   color: #57433a;
   font-family: helvetica;
   font-size: 0.8em;
-  width: 20%;
-}*/
+ 
+}
 
 /*.item {
   background-color: #d0bdb7;

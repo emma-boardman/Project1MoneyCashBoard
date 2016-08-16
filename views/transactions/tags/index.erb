@@ -1,26 +1,76 @@
-<div>
-<h2>Category Breakdown:</h2>
+<style>
+
+table {
+  background-color: #79655e;
+  width: 40%;
+  margin: 25px auto;
+  padding: 2px;
+  color: #d0bdb7;
+  font-family: helvetica;
+  font-size: 1em;
+  border: 1px solid  #79655e;
+  border-collapse: collapse;
+
+}
+
+#td_amount {
+ background-color: #79655e;
+ width: 50%;
+ margin: 15px auto;
+ padding: 15px;
+ color: #d0bdb7;
+ font-family: helvetica;
+ font-size: 2em;
+ text-align: center;
 
 
-</div>
-<!-- arrays respond to each. how do i turn this into an array? more to the point, what is *this*? How do I look at it?  -->
+}
+
+#td_merchant {
+  background-color: #8bc9ce;
+  padding: 12px;
+  margin: 3px;
+  color: #57433a;
+  font-family: helvetica;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: right;
+}
+
+#td_tag {
+  background-color: #d0bdb7;
+  text-align: right;
+  font-family: helvetica;
+  font-size: 0.9em;
+  color: #57433a;
+  padding: 7px;
+}
+
+</style>
+
+
+<header id='transaction_index'>Total Expenditure For Current Category: £<%= @analysis.total_expenditure %></header>
+
 <div>
 <% transactions = @transactions.first %>
 <% @transactions.each do |transaction| %>
+
+<table border=1>
+<tbody>
+<tr>
+  <td rowspan="2" colspan="2" id = "td_amount">£<%= transaction.amount %></td>
+           <td id="td_tag"> <%= transaction.tag.tag %><br></td>
+        </tr>
+        <tr>
+        <td id="td_merchant"><%= transaction.merchant.name  %>
+            
+           </td>
+        </tr>
+    </tbody>
+</table>
     
-    <p>Transaction ID: <%= transaction.id  %> </p>
-
-    <p>Merchant Name: <%= transaction.merchant.name  %></p>
-
-    <p>Category: <%= transaction.tag.tag  %></p>
-
-    <p>Amount: <%= transaction.amount %></p>
-
-    <hr>
   <% end %>
  
 </div>
 
-<div>
-<p><%= @analysis.total_expenditure %></p>
-</div>
+
