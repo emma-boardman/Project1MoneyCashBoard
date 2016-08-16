@@ -1,21 +1,83 @@
-<header id='transaction_index'>Total Expenditure For All Transactions: £<%= @analysis.total_expenditure %></header>
+<html>
+<style>
+
+table {
+  background-color: #79655e;
+  width: 40%;
+  margin: 25px auto;
+  padding: 2px;
+  color: #d0bdb7;
+  font-family: helvetica;
+  font-size: 1em;
+  border: 1px solid  #79655e;
+  border-collapse: collapse;
+
+}
+
+#td_amount {
+ background-color: #79655e;
+ width: 50%;
+ margin: 15px auto;
+ padding: 15px;
+ color: #d0bdb7;
+ font-family: helvetica;
+ font-size: 2em;
+ text-align: center;
 
 
-<div class="container">
+}
+
+#td_merchant {
+  background-color: #8bc9ce;
+  padding: 12px;
+  margin: 3px;
+  color: #57433a;
+  font-family: helvetica;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: right;
+}
+
+#td_tag {
+  background-color: #d0bdb7;
+  text-align: right;
+  font-family: helvetica;
+  font-size: 0.9em;
+  color: #57433a;
+  padding: 7px;
+}
+
+
+</style>
+
+
+<header id='transaction_index'>Total Expenditure For All Transactions: £<%= @analysis.total_expenditure %></header><br>
+
+<center><a href="/transactions/new"><button class="addlink">Add a New Transaction</button></a>
+
+
+
   <% @transactions.each do |transaction| %>
-  
-    <div class="item">Transaction ID:<%= transaction.id  %></div>
 
-  <!--   <p>Merchant ID: <%= transaction.merchant_id %></p> -->
-    <div class="item"><%= transaction.merchant.name  %></div>
-    <!-- <div class="item"> <%= transaction.tag_id %></p> -->
-    <div class="item">Category: <%= transaction.tag.tag %></div>
+<table border=1>
+<tbody>
+<tr>
+  <td rowspan="2" colspan="2" id = "td_amount">£<%= transaction.amount %></td>
+            <td id="td_merchant"><%= transaction.merchant.name  %><br></td>
+        </tr>
+        <tr>
+            
+            <td id="td_tag"> <%= transaction.tag.tag %></td>
+        </tr>
+    </tbody>
+</table>
+<% end %>
 
-    <div class="item">£<%= transaction.amount %></div>
-    <hr>
-  <% end %>
-  <a href="/transactions/new">Add a New Transaction</a>
-</div>
 
-<div>
+
+
+
+ 
+
+
 
