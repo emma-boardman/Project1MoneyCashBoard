@@ -22,7 +22,7 @@ class Analysis
     return total
   end
 
-  
+
 
   # def transactions_by_merchant()
   #   #purpose of this function is to show all transactions by one certain merchant.

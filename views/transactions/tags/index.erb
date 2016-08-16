@@ -1,3 +1,26 @@
 <div>
-<h2>TOTAL EXPENDITURE:</h2>
+<h2>Category Breakdown:</h2>
+
+
+</div>
+<!-- arrays respond to each. how do i turn this into an array? more to the point, what is *this*? How do I look at it?  -->
+<div>
+<% transactions = @transactions.first %>
+<% @transactions.each do |transaction| %>
+    
+    <p>Transaction ID: <%= transaction.id  %> </p>
+
+    <p>Merchant Name: <%= transaction.merchant.name  %></p>
+
+    <p>Category: <%= transaction.tag.tag  %></p>
+
+    <p>Amount: <%= transaction.amount %></p>
+
+    <hr>
+  <% end %>
+ 
+</div>
+
+<div>
+<p><%= @analysis.total_expenditure %></p>
 </div>

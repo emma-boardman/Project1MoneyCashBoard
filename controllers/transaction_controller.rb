@@ -8,7 +8,7 @@ require_relative('../models/analysis.rb')
 get '/transactions' do
   @transactions = Transaction.all()
   @analysis = Analysis.new()
-  erb :'transactions/index'
+  erb (:'transactions/index')
 end
 
 #new
@@ -27,6 +27,7 @@ end
 
 #get a form so the user can enter what they want to search for
 
+#what if I just wrote a method where if someone clicked on a certain category, you would view the total expenditure for that? could hardcode it to links or something?
 
 get '/transactions/tags/new' do
   @transactions = Transaction.all
@@ -37,10 +38,10 @@ end
 #display transactions by tags defined above
 post '/transactions/tags' do
   # binding.pry
-  @transactions = Transaction.show_tag( params['tag_id'].to_i )
-  binding.pry
+  @transactions = Transaction.find_by_tag(params[tag_id])
+  # binding.pry
   @analysis = Analysis.new
-  erb(:'transactions/tags/index')
+  erb :'transactions/tags/index'
 end
 
 
