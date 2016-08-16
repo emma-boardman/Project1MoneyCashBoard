@@ -46,7 +46,7 @@ def tag()
 end
 
 
-def find_by_tag(tag_id)
+def self.find_by_tag(tag_id)
   sql = "SELECT t.* FROM transactions t INNER JOIN tags ON t.tag_id = tags.id WHERE tag_id = #{tag_id}"
   return Transaction.map_items(sql)
 end

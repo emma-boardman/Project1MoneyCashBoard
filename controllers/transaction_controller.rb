@@ -38,7 +38,7 @@ end
 #display transactions by tags defined above
 post '/transactions/tags' do
   # binding.pry
-  @transactions = Transaction.find_by_tag(params[tag_id])
+  @transactions = Transaction.find_by_tag(params['tag_id'])
   # binding.pry
   @analysis = Analysis.new
   erb :'transactions/tags/index'
