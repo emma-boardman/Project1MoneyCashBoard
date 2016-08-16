@@ -1,5 +1,9 @@
-<div>
-<% @merchants.each do |merchant| %>
-<%= merchant.name  %>
+
+<div class="container">
+
+<% @merchants.each do |m| %>
+
+  <div class="item"><%= m.name %></div><hr>
 <% end %>
+
 </div>

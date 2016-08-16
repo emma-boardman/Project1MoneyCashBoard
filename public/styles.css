@@ -2,9 +2,6 @@ body {
   background-color: #f7f2ef;
 }
 
-.opening_greeting {
-  color: tomato;
-}
 
 footer {
   background-color: #57433a;
@@ -38,21 +35,57 @@ header {
      font-weight: bold;
       display: block;
       background-color: #f7f2ef;;
-      margin: 5px auto 0px auto;
-      padding: 5px;
+      margin: 3px auto;
+      padding: 3px;
   /*    border: #57433a 3px solid;
       border-radius: 3%;*/
-      text-align: center;
+     
       width: 50%;
+      text-align: center;
      }
 
-  .button {
+/*  .button {
     background-color: #57433a;
     width: 20px;
     font-size: 0.7em;
+  }*/
 
-  }
+.link {
+  background-color: #57433a;
+  width: 23%;
+  font-size: 0.9em;
+  border: 0px;
+  color: #f7f2ef ;
+  padding: 5px;
+  margin: 4px;
+  border-radius: 10%;
+}
 
+.home {
+  background-color: #79655e; 
+  width: 23%;
+  font-size: 0.9em;
+  border: 1px solid #d0bdb7;
+  color: #f7f2ef ;
+  padding: 5px;
+  margin: 4px;
+  border-radius: 10%;
+}
+
+.link:hover
+{
+  background-color: #d0bdb7;
+  font-weight: bold;
+  color: #57433a;
+
+}
+
+.home:hover
+{
+  background-color: #d0bdb7;
+  color: #57433a;
+  font-weight: bold;
+}
 
  .option {
     color: #57433a;
@@ -68,3 +101,49 @@ header {
      text-align: center;
      width: 50%;
     }
+
+ .total_expenditure {
+
+      color: #57433a;
+      font-family: helvetica;
+      font-size: 1em;
+      font-weight: bold;
+       display: block;
+       background-color: #f7f2ef;
+       margin: 5px auto 0px auto;
+       padding: 15px 0px 0px 0px;
+       border: 0px;
+       border-radius: 3%;
+       text-align: center;
+       width: 50%;
+    }
+
+    .total {
+      font-size: 3em;
+      line-height: 0.5;
+    }
+
+    #transaction_index {
+      font-size: 0.8em;
+      border: #57433a 1.5px solid;
+
+    }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  width: 60%;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.item_description {
+  font-weight: bold;
+}
+
+.item {
+  background-color: purple;
+  padding: 5px;
+  margin: 8px;
+}

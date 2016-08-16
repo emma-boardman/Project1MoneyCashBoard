@@ -1,20 +1,17 @@
-<div>
-<h2>TOTAL EXPENDITURE:</h2>
+<header id='transaction_index'>Total Expenditure For All Transactions: £<%= @analysis.total_expenditure %></header>
 
-<p><%= @analysis.total_expenditure %></p>
-</div>
 
-<div>
+<div class="container">
   <% @transactions.each do |transaction| %>
-    <p>Transaction ID: <%= transaction.id  %> </p>
+  
+    <div class="item">Transaction ID:<%= transaction.id  %></div>
 
   <!--   <p>Merchant ID: <%= transaction.merchant_id %></p> -->
-    <p>Merchant Name: <%= transaction.merchant.name  %></p>
-    <p>Tag ID: <%= transaction.tag_id %></p>
-    <p>Category: <%= transaction.tag.tag %></p>
+    <div class="item"><%= transaction.merchant.name  %></div>
+    <!-- <div class="item"> <%= transaction.tag_id %></p> -->
+    <div class="item">Category: <%= transaction.tag.tag %></div>
 
-    <p>Amount: <%= transaction.amount %></p>
-
+    <div class="item">£<%= transaction.amount %></div>
     <hr>
   <% end %>
   <a href="/transactions/new">Add a New Transaction</a>
