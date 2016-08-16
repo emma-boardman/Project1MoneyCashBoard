@@ -2,22 +2,22 @@
 <html>
 <head>
   <title>MoneyCashboard</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
 <header>
-Transactions
+MoneyCashBoard
 </header>
+<div class="nav">
+Quick view:
+<a href="/merchants"><button class="link">Merchants</button></a>
+<a href="/tags"><button class="link">Tags</button></a>
+ <a href="/transactions"><button class="link">Transactions</button></a>
+   </div>
 
-      <ul>
-        <li><a href="/merchants">Merchants</a></li>
-        <li><a href="/tags">Tags</a></li>
-        <li><a href="/transactions">Transactions</a></li>
-      </ul>
-   
   <main>
     <%= yield %>
   </main>
-  <footer>CodeClanLibrary &copy 2016</footer>
+  <footer></footer>
 </body>
 </html>
