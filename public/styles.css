@@ -32,6 +32,16 @@ text-decoration: none;
 
 }
 
+.text {
+  font-family: helvetica;
+  font-size: 0.9em;
+}
+
+.formtext {
+  font-family: helvetica;
+  font-size: 0.8em;
+}
+
 .nav {
    /*  color: #57433a;*/
      font-family: helvetica;
@@ -136,8 +146,9 @@ text-decoration: none;
     font-size: 1.2em;
   }
 
-  .option:hover
-  {background-color: #00BFBF}
+  .option:hover {
+    background-color: #00BFBF;
+  }
 
  .total_expenditure {
 

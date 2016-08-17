@@ -1,9 +1,11 @@
-<h2>New Transaction</h2>
-
+<div>
+<center>
+<p class="text">Add a New Transaction:</p>
 <form action="/transactions" method="post">
 
-<label for="amount">Amount:</label>
+<label for="amount"><p class="formtext">Amount:</label>
 <input type="text" name="amount"><br>
+<br>
 
 <label for="merchant_id">Merchant:</label>
 <select name="merchant_id">
@@ -12,6 +14,7 @@
 </option>
 <% end %>
 </select>
+<br><br>
 
 
 <label for="tag_id">Category:</label>
@@ -21,8 +24,11 @@
  </option>
  <% end %>
  </select>
-
-<input type='submit' value="Add Transaction">
+<br><br></p>
+ <input type='submit' value="Add Transaction" class="addlink">
 </form>
+<br><br><br>
+</center>
+</div>
 
 
