@@ -48,11 +48,20 @@ table {
 
 </style>
 
+<header id='transaction_index'>
+<% transactions = @transactions.first %>
+<% total = 0 %>
+<% @transactions.each do |transaction| total += transaction.amount  %><% end %>
+Total Expenditure For Current Category: £<%= total %>
 
-<header id='transaction_index'>Total Expenditure For Current Category: £<%= @analysis.total_expenditure %></header>
+</header>
+
+
+
 
 <div>
 <% transactions = @transactions.first %>
+
 <% @transactions.each do |transaction| %>
 
 <table border=1>

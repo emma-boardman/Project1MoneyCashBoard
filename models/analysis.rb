@@ -14,11 +14,11 @@ class Analysis
     return total
   end
 
-  def total_expenditure_by_tag
+  def total_expenditure_by_tag( tag_id )
     #want to calculate total expenditure by a passed in tag. 
     #extract from transactions, by tag, add together.
     total = 0
-    @transactions.each {|transaction| total += transaction.amount if transaction.tag_id == 5 }
+    @transactions.each {|transaction| total += transaction.amount if transaction.tag_id == tag_id }
     return total
   end
 
