@@ -20,14 +20,17 @@ header {
    background-color: #d0bdb7;
    height: 100%;
    width: 50%;
-   margin: 0 auto;
+   margin: 15px auto;
    padding: 10px;
-   border: #57433a 3px solid;
+   border: #57433a 2px solid;
    border-radius: 3%;
    text-align: center;
   }
 
+a:link {
+text-decoration: none;
 
+}
 
 .nav {
    /*  color: #57433a;*/
@@ -36,7 +39,7 @@ header {
      font-weight: bold;
       display: block;
       background-color: #f7f2ef;;
-      margin: 3px auto;
+      margin: 10px auto 15px;
       padding: 3px;
   /*    border: #57433a 3px solid;
       border-radius: 3%;*/
@@ -116,13 +119,25 @@ header {
     font-weight: bold;
      display: block;
      background-color: #d0bdb7;
-     margin: 5px auto 0px auto;
-     padding: 5px;
+     margin: 20px auto 15px auto;
+     padding: 5px 5px 15px 5px;
      border: #57433a 3px solid;
      border-radius: 3%;
      text-align: center;
      width: 50%;
+     height: 100px;
+
     }
+
+  .optiontext {
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+    font-size: 1.2em;
+  }
+
+  .option:hover
+  {background-color: #00BFBF}
 
  .total_expenditure {
 
