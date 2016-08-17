@@ -39,7 +39,7 @@ text-decoration: none;
 
 .formtext {
   font-family: helvetica;
-  font-size: 0.8em;
+  font-size: 0.75em;
 }
 
 .nav {
@@ -202,6 +202,23 @@ text-decoration: none;
  
 }
 
+
+input {
+background-color: #8bc9ce;
+border: 1px solid #57433a;
+font-family: helvetica;
+font-size: 1em;
+width: 60px;
+margin: 5px;
+
+}
+
+select {
+  background-color: #8bc9ce;
+  border: 1px solid #57433a;
+  font-family: helvetica;
+  font-size: 1em;
+}
 /*.item {
   background-color: #d0bdb7;
   padding: 3px;
