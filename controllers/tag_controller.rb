@@ -15,8 +15,8 @@ get '/tags/new' do
 end
 
 #create
-post '/transactions' do
-  transaction = Transaction.new(params) 
-  transaction.save()
-  redirect( to('transactions') )
+post '/tags' do
+  tag = Tag.new(params) 
+  tag.save()
+  redirect( to('tags') )
 end
