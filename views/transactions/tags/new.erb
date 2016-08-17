@@ -1,8 +1,9 @@
 
 <div>
 <center>
+<p class="text">
 <form action="/transactions/tags" method="post">
-<label for="tag_id">Category:</label>
+<label for="tag_id"><p class="formtext">Category:</label>
 <select name="tag_id">
 <% @tags.each do |tag|  %>
 <option value="<%= tag.id  %>"> <%= tag.tag  %>
@@ -10,7 +11,7 @@
  <% end %>
  </select>
 
-<input type='submit' value="Search for this category">
+<input type='submit' value="Search">
 </form>
 <br>
 </center>
